@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "3ffe54e8-19bf-4854-9706-84fff7c1da00",
+		"name": "FUTURE-CODE-TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34572454",
+		"_collection_link": "https://gold-sunset-156514.postman.co/workspace/My-Workspace~40210b25-d95d-442c-8e14-22c4b98a3ba3/collection/34572454-3ffe54e8-19bf-4854-9706-84fff7c1da00?action=share&source=collection_link&creator=34572454"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_seed_project}}/auth/login",
+							"host": [
+								"{{base_url_seed_project}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test1234567\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_seed_project}}/auth/login",
+									"host": [
+										"{{base_url_seed_project}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-pW1nZbdVnGfj57zG9AIq3vNgdmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 May 2024 08:00:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"DONE\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZXVlaS1lZWplaWotZWVuZXJmIiwiZmlyc3RfbmFtZSI6IkNoYXRodXJhbmdhIiwibGFzdF9uYW1lIjoiSmF5IiwiZW1haWwiOiJ1bmlzY2pAZ21haWwuY29tIiwicm9sZSI6MjAxLCJpYXQiOjE3MTU3NjAwMTQsImV4cCI6MTcyMjk2MDAxNH0.iKM78GQeOXUjuDxlogPEjL1hlHMy_Vhg8zWv4vQY4IM\",\n        \"user_uuid\": \"euei-eejeij-eenerf\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"Sankesh\",\n    \"last_name\":\"Jay\",\n    \"user_name\":\"sankesh\",\n    \"email\":\"sankeshjay@gmail,com\",\n    \"password\":\"test123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_seed_project}}/auth/signup",
+							"host": [
+								"{{base_url_seed_project}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add New Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Product A\",\n    \"price\":124.50,\n    \"quantity\":12.25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_seed_project}}/product/",
+							"host": [
+								"{{base_url_seed_project}}"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test1234567\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_seed_project}}/auth/login",
+									"host": [
+										"{{base_url_seed_project}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-pW1nZbdVnGfj57zG9AIq3vNgdmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 May 2024 08:00:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"DONE\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZXVlaS1lZWplaWotZWVuZXJmIiwiZmlyc3RfbmFtZSI6IkNoYXRodXJhbmdhIiwibGFzdF9uYW1lIjoiSmF5IiwiZW1haWwiOiJ1bmlzY2pAZ21haWwuY29tIiwicm9sZSI6MjAxLCJpYXQiOjE3MTU3NjAwMTQsImV4cCI6MTcyMjk2MDAxNH0.iKM78GQeOXUjuDxlogPEjL1hlHMy_Vhg8zWv4vQY4IM\",\n        \"user_uuid\": \"euei-eejeij-eenerf\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product By Uuid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_seed_project}}/product/f5018198-9de6-4cbb-a018-61ea66dd854c",
+							"host": [
+								"{{base_url_seed_project}}"
+							],
+							"path": [
+								"product",
+								"f5018198-9de6-4cbb-a018-61ea66dd854c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test1234567\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_seed_project}}/auth/login",
+									"host": [
+										"{{base_url_seed_project}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-pW1nZbdVnGfj57zG9AIq3vNgdmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 May 2024 08:00:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"DONE\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZXVlaS1lZWplaWotZWVuZXJmIiwiZmlyc3RfbmFtZSI6IkNoYXRodXJhbmdhIiwibGFzdF9uYW1lIjoiSmF5IiwiZW1haWwiOiJ1bmlzY2pAZ21haWwuY29tIiwicm9sZSI6MjAxLCJpYXQiOjE3MTU3NjAwMTQsImV4cCI6MTcyMjk2MDAxNH0.iKM78GQeOXUjuDxlogPEjL1hlHMy_Vhg8zWv4vQY4IM\",\n        \"user_uuid\": \"euei-eejeij-eenerf\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_seed_project}}/product",
+							"host": [
+								"{{base_url_seed_project}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test1234567\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_seed_project}}/auth/login",
+									"host": [
+										"{{base_url_seed_project}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-pW1nZbdVnGfj57zG9AIq3vNgdmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 May 2024 08:00:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"DONE\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZXVlaS1lZWplaWotZWVuZXJmIiwiZmlyc3RfbmFtZSI6IkNoYXRodXJhbmdhIiwibGFzdF9uYW1lIjoiSmF5IiwiZW1haWwiOiJ1bmlzY2pAZ21haWwuY29tIiwicm9sZSI6MjAxLCJpYXQiOjE3MTU3NjAwMTQsImV4cCI6MTcyMjk2MDAxNH0.iKM78GQeOXUjuDxlogPEjL1hlHMy_Vhg8zWv4vQY4IM\",\n        \"user_uuid\": \"euei-eejeij-eenerf\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Product B\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_seed_project}}/product/f5018198-9de6-4cbb-a018-61ea66dd854c",
+							"host": [
+								"{{base_url_seed_project}}"
+							],
+							"path": [
+								"product",
+								"f5018198-9de6-4cbb-a018-61ea66dd854c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test1234567\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_seed_project}}/auth/login",
+									"host": [
+										"{{base_url_seed_project}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-pW1nZbdVnGfj57zG9AIq3vNgdmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 May 2024 08:00:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"DONE\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZXVlaS1lZWplaWotZWVuZXJmIiwiZmlyc3RfbmFtZSI6IkNoYXRodXJhbmdhIiwibGFzdF9uYW1lIjoiSmF5IiwiZW1haWwiOiJ1bmlzY2pAZ21haWwuY29tIiwicm9sZSI6MjAxLCJpYXQiOjE3MTU3NjAwMTQsImV4cCI6MTcyMjk2MDAxNH0.iKM78GQeOXUjuDxlogPEjL1hlHMy_Vhg8zWv4vQY4IM\",\n        \"user_uuid\": \"euei-eejeij-eenerf\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Product B\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_seed_project}}/product/f5018198-9de6-4cbb-a018-61ea66dd854c",
+							"host": [
+								"{{base_url_seed_project}}"
+							],
+							"path": [
+								"product",
+								"f5018198-9de6-4cbb-a018-61ea66dd854c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"uniscj@gmail.com\",\n    \"password\":\"test1234567\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_seed_project}}/auth/login",
+									"host": [
+										"{{base_url_seed_project}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "343"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"157-pW1nZbdVnGfj57zG9AIq3vNgdmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 May 2024 08:00:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"DONE\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZXVlaS1lZWplaWotZWVuZXJmIiwiZmlyc3RfbmFtZSI6IkNoYXRodXJhbmdhIiwibGFzdF9uYW1lIjoiSmF5IiwiZW1haWwiOiJ1bmlzY2pAZ21haWwuY29tIiwicm9sZSI6MjAxLCJpYXQiOjE3MTU3NjAwMTQsImV4cCI6MTcyMjk2MDAxNH0.iKM78GQeOXUjuDxlogPEjL1hlHMy_Vhg8zWv4vQY4IM\",\n        \"user_uuid\": \"euei-eejeij-eenerf\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
